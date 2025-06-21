@@ -1,0 +1,12 @@
+project:
+  name: 202506-etl-project
+
+services:
+  postgres:
+    image: postgres:13
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
