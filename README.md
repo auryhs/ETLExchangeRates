@@ -1,6 +1,6 @@
 # 💱 Exchange Rate ETL Pipeline
 
-A showcase ETL project built using **Apache Airflow** on **Astronomer** that fetches foreign exchange rates from an external API and stores the data into a PostgreSQL database.
+A simple ETL project built using **Apache Airflow** on **Astronomer** that fetches foreign exchange rates from an external API and stores the data into a PostgreSQL database.
 
 Inspired by Krish Naik’s content — YouTube and GitHub references at the bottom.
 
