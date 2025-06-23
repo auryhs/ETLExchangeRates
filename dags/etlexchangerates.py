@@ -10,7 +10,9 @@ POSTGRES_CONN_ID = 'postgres_default'
 API_CONN_ID = 'open_exchange_rate_api'
 BASE_CURRENCY = ['USD','SGD']
 TARGET_CURRENCY= ['IDR']
-API_DEFAULT_KEY = 'fca_live_KM5NwD0riRNtKvejPAa0BVb7AmhlizowcyIDZklJ'
+# 👇 Replace this with your actual API key
+# NOTE: This is just a placeholder. Do NOT commit real keys to GitHub.
+API_DEFAULT_KEY = "YOUR_API_KEY_HERE"
 
 
 default_args={
@@ -28,7 +30,7 @@ with DAG(dag_id = 'exchange_rate_etl_pipeline',
     ## inside this DAG we will define our tasks
     @task()
     def extract_exchange_rate_data(api_key, base_currency, target_currency):
-       ## Extract exchange rate data from Freecurrency API using Airflow Connection.
+       """ Extract exchange rate data from Freecurrency API using Airflow Connection."""
         all_exchange_data= {}
         # Use HTTP Hook to get connection details from Airflow 
         http_hook = HttpHook(http_conn_id=API_CONN_ID,method='GET')
@@ -50,7 +52,7 @@ with DAG(dag_id = 'exchange_rate_etl_pipeline',
 
     @task()
     def transform_exchange_rate_data(base, target, exchange_rate_data):
-        """Transfrom the extracted ... data"""
+        """Transfrom the extracted exchange rate data"""
         print(exchange_rate_data)
         transformed_data = []
         for b in base:
